@@ -1,0 +1,251 @@
+:root {
+    --main-color: Gold;
+    --main-color-alt: Gold;
+    --main-transition: 0.3s;
+    --main-padding-top: 100px;
+    --main-padding-bottom: 100px;
+    --section-background: black;
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Work Sans", sans-serif;
+    background-color: gold;
+}
+
+
+/* header and footer*/
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+    margin: auto;
+    padding: 0vw;
+}
+
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: 5%;
+}
+
+.main-nav {
+    float: right;
+    display: inline;
+    z-index: 1;
+    font-size: 2rem;
+}
+
+.header {
+    background-color: black;
+    position: relative;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    color: white;
+    right: 5%;
+}
+
+.header .logo {
+    position: absolute;
+    top: 5px;
+    left: -10px;
+    z-index: 7;
+}
+
+.header .main-nav {
+    display: flex;
+    color: #fafafa;
+    right: 10%;
+}
+
+.header .main-nav>li>a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 72px;
+    position: relative;
+    color: white;
+    padding: 0 30px;
+    overflow: hidden;
+    font-size: 18px;
+    transition: var(--main-transition);
+}
+
+.header .main-nav>li>a::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background-color: var(--main-color);
+    top: 0;
+    left: -100%;
+    transition: var(--main-transition);
+}
+
+.header .main-nav>li>a:hover {
+    color: var(--main-color);
+    background-color: black;
+}
+
+.header .main-nav>li>a:hover::before {
+    left: 0;
+}
+
+footer {
+    position: relative;
+    float: right;
+    background-color: rgb(0, 0, 0);
+    width: 100%;
+    bottom: 0px;
+    left: 0;
+    z-index: 5;
+}
+
+footer i {
+    box-sizing: border-box;
+    display: flex;
+    flex-flow: row;
+    padding: 16px;
+    float: right;
+    padding-right: 40px;
+    transition: color 1s, background-color 1s;
+}
+
+footer a {
+    color: #ffffff;
+}
+
+footer p {
+    color: white;
+    padding-left: 50px;
+}
+
+footer a i:hover {
+    background-color: gold;
+}
+
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.rev {
+    padding-top: var(--main-padding-top);
+    padding-bottom: var(--main-padding-bottom);
+    position: relative;
+    background-color: var(--section-background);
+}
+
+.rev .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.rev .box {
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 7%);
+    border-radius: 6px;
+    position: relative;
+}
+
+.rev .box img {
+    position: absolute;
+    right: -10px;
+    top: -50px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 10px solid var(--section-background);
+}
+
+.rev .box h3 {
+    margin: 0 0 10px;
+}
+
+.rev .box .title {
+    color: #777;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.rev .box .rate .filled {
+    color: #ffc107;
+}
+
+.rev .box p {
+    line-height: 1.5;
+    color: #777;
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+.main-title {
+    top: 20%;
+    text-transform: uppercase;
+    margin: auto auto 80px;
+    border: 2px solid gold;
+    padding: 10px 20px;
+    font-size: 30px;
+    width: max-content;
+    position: relative;
+    z-index: 1;
+    transition: var(--main-transition);
+    color: gold;
+}
+
+
+/* media query */
+
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+@media (max-width: 767px) {
+    .header .main-nav>li>a {
+        padding: 10px;
+        font-size: 14px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 767px) {
+    .header .logo {
+        width: 100%;
+        height: 50px;
+    }
+}
+
+@media (max-width: 767px) {
+    .header .main-nav {
+        margin: auto;
+    }
+}

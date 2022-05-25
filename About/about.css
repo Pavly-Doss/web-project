@@ -1,0 +1,292 @@
+:root {
+    --main-color: Gold;
+    --main-color-alt: Gold;
+    --main-transition: 0.3s;
+    --main-padding-top: 100px;
+    --main-padding-bottom: 100px;
+    --section-background: black;
+}
+
+body {
+    background-image: url(images/background.jpg);
+}
+
+
+/* header and footer*/
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+    margin: auto;
+    padding: 0vw;
+}
+
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: 5%;
+}
+
+.main-nav {
+    float: right;
+    display: inline;
+    z-index: 1;
+    font-size: 2rem;
+}
+
+.header {
+    background-color: black;
+    position: relative;
+    width: 100%;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    color: white;
+    right: 5%;
+    width: 100%;
+}
+
+.header .logo {
+    position: absolute;
+    top: 5px;
+    left: -10px;
+    z-index: 7;
+}
+
+.header .main-nav {
+    display: flex;
+    color: #fafafa;
+    right: 10%;
+}
+
+.header .main-nav>li>a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 72px;
+    position: relative;
+    color: white;
+    padding: 0 30px;
+    overflow: hidden;
+    font-size: 18px;
+    transition: var(--main-transition);
+}
+
+.header .main-nav>li>a::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background-color: var(--main-color);
+    top: 0;
+    left: -100%;
+    transition: var(--main-transition);
+}
+
+.header .main-nav>li>a:hover {
+    color: var(--main-color);
+    background-color: black;
+}
+
+.header .main-nav>li>a:hover::before {
+    left: 0;
+}
+
+footer {
+    position: relative;
+    float: right;
+    background-color: rgb(0, 0, 0);
+    width: 100%;
+    bottom: 0px;
+    left: 0;
+    z-index: 5;
+}
+
+footer i {
+    box-sizing: border-box;
+    display: flex;
+    flex-flow: row;
+    padding: 16px;
+    float: right;
+    padding-right: 40px;
+    transition: color 1s, background-color 1s;
+}
+
+footer a {
+    color: #ffffff;
+}
+
+footer p {
+    color: white;
+    padding-left: 50px;
+}
+
+footer a i:hover {
+    background-color: gold;
+}
+
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.team {
+    padding-top: var(--main-padding-top);
+    padding-bottom: var(--main-padding-bottom);
+    position: relative;
+}
+
+.team .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.team .box {
+    position: relative;
+}
+
+.team .box::before,
+.team .box::after {
+    content: "";
+    background-color: #f3f3f3;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    border-radius: 10px;
+    transition: var(--main-transition);
+}
+
+.team .box::before {
+    width: calc(100% - 60px);
+    z-index: -2;
+}
+
+.team .box::after {
+    z-index: -1;
+    background-color: #e4e4e4;
+    width: 0;
+}
+
+.team .box:hover::after {
+    width: calc(100% - 60px);
+}
+
+.team .box .data {
+    display: flex;
+    align-items: center;
+    padding-top: 60px;
+}
+
+.team .box .data img {
+    width: calc(100% - 60px);
+    transition: var(--main-transition);
+    border-radius: 10px;
+}
+
+.team .box:hover img {
+    filter: grayscale(100%);
+}
+
+.team .box .data .social {
+    width: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.team .box .data .social a {
+    width: 60px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.team .box .data .social a:hover i {
+    color: var(--main-color);
+}
+
+.team .box .data .social i {
+    color: #777;
+    transition: var(--main-transition);
+}
+
+.team .box .info {
+    padding-left: 80px;
+}
+
+.team .box .info h3 {
+    margin-bottom: 0;
+    color: var(--main-color);
+    font-size: 22px;
+    transition: var(--main-transition);
+}
+
+.team .box .info p {
+    margin-top: 10px;
+    margin-bottom: 25px;
+}
+
+.team .box:hover .info h3 {
+    color: #777;
+}
+
+.main-title {
+    top: 20%;
+    text-transform: uppercase;
+    margin: auto auto 80px;
+    border: 2px solid rgb(255, 255, 255);
+    padding: 10px 10px;
+    font-size: 30px;
+    width: 11rem;
+    height: max-content;
+    position: relative;
+    z-index: 1;
+    transition: var(--main-transition);
+    color: rgb(255, 255, 255);
+}
+
+
+/* media query */
+
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+@media (max-width: 767px) {
+    .header .main-nav>li>a {
+        padding: 10px;
+        font-size: 14px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 767px) {
+    .header .main-nav {
+        margin: auto;
+    }
+}
